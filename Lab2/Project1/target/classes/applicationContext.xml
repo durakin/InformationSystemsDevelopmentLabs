@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="linearCompressorBean"
+          class="com.github.durakin.isdlabs.lab2.components.LinearCompressor">
+        <constructor-arg name="noiseLevel" value="300"/>
+        <constructor-arg name="power" value="40"/>
+    </bean>
+
+    <bean id="linearFridgeBean"
+          class="com.github.durakin.isdlabs.lab2.components.Fridge">
+        <constructor-arg ref="linearCompressorBean"/>
+    </bean>
+
+    <context:property-placeholder location="classpath:inverterCompressor.properties"/>
+    <bean id="inverterCompressorBean" class="com.github.durakin.isdlabs.lab2.components.InverterCompressor">
+        <constructor-arg value="35"/>
+        <property name="vibration" value="${compressorVibration}"/>
+    </bean>
+
+    <bean id="inverterFridgeBean"
+          class="com.github.durakin.isdlabs.lab2.components.Fridge">
+        <constructor-arg ref="inverterCompressorBean"/>
+    </bean>
+
+
+</beans>
