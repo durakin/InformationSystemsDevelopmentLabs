@@ -2,10 +2,14 @@ package com.github.durakin.isdlabs.lab2.components;
 
 public class LinearCompressor implements Compressor {
     private final int power;
-    private final int noiseLevel;
+    private int noiseLevel;
 
     public LinearCompressor(int power, int noiseLevel) {
         this.power = power;
+        this.noiseLevel = noiseLevel;
+    }
+
+    public void setNoiseLevel(int noiseLevel) {
         this.noiseLevel = noiseLevel;
     }
 

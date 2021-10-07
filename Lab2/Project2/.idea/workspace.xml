@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22a287a2-89cc-4a0f-900b-de9fb1efaef9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/components/CompressorFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/linearCompressor.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/components/Compressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/components/Compressor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/components/Fridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/components/Fridge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/components/InverterCompressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/components/InverterCompressor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/components/LinearCompressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/components/LinearCompressor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633543166646</updated>
       <workItem from="1633543168832" duration="1332000" />
-      <workItem from="1633575536534" duration="5216000" />
+      <workItem from="1633575536534" duration="6969000" />
     </task>
     <servers />
   </component>
