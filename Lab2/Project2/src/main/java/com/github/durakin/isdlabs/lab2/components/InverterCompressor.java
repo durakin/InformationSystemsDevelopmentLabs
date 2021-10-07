@@ -1,23 +1,22 @@
 package com.github.durakin.isdlabs.lab2.components;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class InverterCompressor implements Compressor {
     private final int power;
-    private int vibration;
-
-    public InverterCompressor(int power) {
-        this.power = power;
-    }
+    private final int vibration;
 
     public InverterCompressor(int power, int vibration) {
         this.power = power;
         this.vibration = vibration;
     }
 
-    public void setVibration(int vibration) {
-        this.vibration = vibration;
+    @Override
+    public void startWorking() {
+        System.out.println("Compressor starts working quietly");
+    }
+
+    @Override
+    public void stopWorking() {
+        System.out.println("Compressor stopped working without any sound");
     }
 
     @Override

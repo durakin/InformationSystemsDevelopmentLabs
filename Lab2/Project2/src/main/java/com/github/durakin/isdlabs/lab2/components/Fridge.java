@@ -1,9 +1,16 @@
 package com.github.durakin.isdlabs.lab2.components;
 
-public class Fridge {
-    private final Compressor compressor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
-    public Fridge(Compressor compressor) {
+@Component
+public class Fridge {
+
+    private Compressor compressor;
+
+    @Autowired
+    public Fridge(@Qualifier("linearCompressor1") Compressor compressor) {
         this.compressor = compressor;
     }
 
@@ -12,6 +19,8 @@ public class Fridge {
         return "Fridge, equipped with compressor: " + compressor;
     }
 
-    public void statusOutput() { System.out.println(this.compressor.work());}
+    public void statusOutput() {
+        System.out.println(this.compressor.work());
+    }
 
 }

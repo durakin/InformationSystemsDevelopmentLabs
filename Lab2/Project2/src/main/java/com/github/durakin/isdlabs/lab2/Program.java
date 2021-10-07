@@ -1,10 +1,18 @@
 package com.github.durakin.isdlabs.lab2;
 
 import com.github.durakin.isdlabs.lab2.components.Fridge;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Program {
     public static void main(String[] args) {
-
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(Config.class);
+        Fridge fridge1 = (Fridge) context.getBean("fridge");
+        Fridge fridge2 = (Fridge) context.getBean("inverterFridge");
+        System.out.println(fridge1);
+        fridge1.statusOutput();
+        System.out.println(fridge2);
+        fridge2.statusOutput();
+        context.close();
     }
 }
