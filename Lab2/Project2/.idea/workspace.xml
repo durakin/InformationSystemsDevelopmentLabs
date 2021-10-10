@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22a287a2-89cc-4a0f-900b-de9fb1efaef9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/linearCompressor.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/linearCompressor.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/components/LinearCompressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/durakin/isdlabs/lab2/components/LinearCompressor.java" afterDir="false" />
-    </list>
+    <list default="true" id="22a287a2-89cc-4a0f-900b-de9fb1efaef9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,6 +82,7 @@
       <updated>1633543166646</updated>
       <workItem from="1633543168832" duration="1332000" />
       <workItem from="1633575536534" duration="7574000" />
+      <workItem from="1633585947839" duration="157000" />
     </task>
     <servers />
   </component>
