@@ -27,6 +27,5 @@ public class Program {
         studentRepository.saveAll(students);
 
          */
-        return;
     }
 }

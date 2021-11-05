@@ -18,41 +18,45 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration("springConfig")
-@ComponentScan("com.github.durakin.InformationSystemDevelopmentLabs.Lab3.*")
+@ComponentScan("com.github.durakin.InformationSystemDevelopmentLabs.Lab3.components")
 @PropertySource("classpath:application.properties")
 @EnableTransactionManagement
-@EnableJpaRepositories("com.github.durakin.InformationSystemDevelopmentLabs.Lab3.components")
+@EnableJpaRepositories
 public class SpringConfig {
-    @Autowired
-    private Environment env; // необходима зависимость Spring Core
-    @Bean
-    DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(env.getProperty("dataSource.driverClassName"));
-        dataSource.setUrl(env.getProperty("dataSource.url"));
-        dataSource.setUsername(env.getProperty("dataSource.username"));
-        dataSource.setPassword(env.getProperty("dataSource.password"));
+    private final Environment env; // необходима зависимость Spring Core
 
-        return dataSource;
+    public SpringConfig(Environment env) {
+        this.env = env;
+    }
+
+    @Bean
+    public PlatformTransactionManager transactionManager() {
+        JpaTransactionManager txManager = new JpaTransactionManager();
+        txManager.setEntityManagerFactory(entityManagerFactory());
+        return txManager;
     }
 
     @Bean
     public EntityManagerFactory entityManagerFactory() {
-        HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        var vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setGenerateDdl(true);
-        LocalContainerEntityManagerFactoryBean factory = new
-                LocalContainerEntityManagerFactoryBean();
+        var factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
         factory.setPackagesToScan("com.github.durakin.InformationSystemDevelopmentLabs.Lab3.entity");
         factory.setDataSource(dataSource());
         factory.afterPropertiesSet();
         return factory.getObject();
     }
+
     @Bean
-    public PlatformTransactionManager transactionManager() {
-        JpaTransactionManager txManager = new JpaTransactionManager();
-        txManager.setEntityManagerFactory(entityManagerFactory());
-        return txManager;
+    public DataSource dataSource() {
+        var dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName(env.getProperty("dataSource.driverClassName"));
+        dataSource.setUrl(env.getProperty("dataSource.url"));
+        dataSource.setUsername(env.getProperty("dataSource.username"));
+        dataSource.setPassword(env.getProperty("dataSource.password"));
+
+        return dataSource;
     }
 
 }
