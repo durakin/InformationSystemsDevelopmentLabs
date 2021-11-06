@@ -1,6 +1,6 @@
-package com.github.durakin.isdlabs.lab3.repositories;
+package com.github.durakin.isdlabs.lab3.repository;
 
-import com.github.durakin.isdlabs.lab3.entities.Apparel;
+import com.github.durakin.isdlabs.lab3.entity.Apparel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.github.durakin.isdlabs.lab3.entities;
+package com.github.durakin.isdlabs.lab3.entity;
 
 
 import javax.persistence.*;

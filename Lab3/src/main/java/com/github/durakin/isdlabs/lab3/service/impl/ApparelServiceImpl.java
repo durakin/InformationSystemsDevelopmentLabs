@@ -1,8 +1,8 @@
-package com.github.durakin.isdlabs.lab3.services.impl;
+package com.github.durakin.isdlabs.lab3.service.impl;
 
-import com.github.durakin.isdlabs.lab3.entities.Apparel;
-import com.github.durakin.isdlabs.lab3.repositories.ApparelRepository;
-import com.github.durakin.isdlabs.lab3.services.ApparelService;
+import com.github.durakin.isdlabs.lab3.entity.Apparel;
+import com.github.durakin.isdlabs.lab3.repository.ApparelRepository;
+import com.github.durakin.isdlabs.lab3.service.ApparelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;

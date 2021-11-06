@@ -1,7 +1,7 @@
 package com.github.durakin.isdlabs.lab3;
 
-import com.github.durakin.isdlabs.lab3.entities.Apparel;
-import com.github.durakin.isdlabs.lab3.services.ApparelService;
+import com.github.durakin.isdlabs.lab3.entity.Apparel;
+import com.github.durakin.isdlabs.lab3.service.ApparelService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.BufferedReader;
