@@ -1,10 +1,7 @@
-package com.github.durakin.InformationSystemDevelopmentLabs.Lab3.entity;
+package com.github.durakin.isdlabs.lab3.entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Apparel {
@@ -12,10 +9,20 @@ public class Apparel {
     @GeneratedValue(strategy =
             GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(nullable = false)
     private Double price;
+
+    @Column(name = "\"inStock\"", nullable = false)
     private Integer inStock;
+
+    @Column(name = "\"apparelType\"", nullable = false)
     private String apparelType;
+
+    @Column
     private String size;
+
+    @Column
     private String sex;
 
     public Apparel() {
@@ -34,44 +41,44 @@ public class Apparel {
         return id;
     }
 
-    public Double getPrice() {
-        return price;
-    }
-
-    public Integer getInStock() {
-        return inStock;
-    }
-
-    public String getApparelType() {
-        return apparelType;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Double getPrice() {
+        return price;
     }
 
     public void setPrice(Double price) {
         this.price = price;
     }
 
+    public Integer getInStock() {
+        return inStock;
+    }
+
     public void setInStock(Integer inStock) {
         this.inStock = inStock;
+    }
+
+    public String getApparelType() {
+        return apparelType;
     }
 
     public void setApparelType(String apparelType) {
         this.apparelType = apparelType;
     }
 
+    public String getSize() {
+        return size;
+    }
+
     public void setSize(String size) {
         this.size = size;
+    }
+
+    public String getSex() {
+        return sex;
     }
 
     public void setSex(String sex) {
@@ -84,7 +91,7 @@ public class Apparel {
                 "\nType " + apparelType +
                 "\nSex " + sex +
                 "\nSize " + size +
-                "\nPrice " + price +
+                "\nPrice " + String.format("%.2f", price) +
                 "\nLeft in stock " + inStock +
                 '\n';
     }
