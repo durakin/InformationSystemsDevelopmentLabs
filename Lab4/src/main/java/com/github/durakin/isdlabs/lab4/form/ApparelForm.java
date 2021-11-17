@@ -5,7 +5,7 @@ import javax.validation.constraints.*;
 public class ApparelForm {
 
     @NotNull(message = "Can't be null")
-    @PositiveOrZero(message = "Can't be negative")
+    @Positive(message = "Must be positive")
     private int id;
 
     @NotBlank(message = "Can't be blank")
@@ -15,8 +15,8 @@ public class ApparelForm {
 
     private char sex;
 
-    @NotNull(message = "Поле не должно быть пустым")
-    @Positive(message = "Должно быть положительным")
+    @NotNull(message = "Can't be null")
+    @Positive(message = "Must be positive")
     private double price;
 
     @NotNull(message = "Can't be null")
