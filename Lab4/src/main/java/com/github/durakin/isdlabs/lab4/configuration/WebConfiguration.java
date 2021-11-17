@@ -16,11 +16,11 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.github.durakin.isdlabs.lab4")
-public class ServletConfiguration implements WebMvcConfigurer {
+public class WebConfiguration implements WebMvcConfigurer {
     private final ApplicationContext applicationContext;
 
     @Autowired
-    public ServletConfiguration(ApplicationContext applicationContext) {
+    public WebConfiguration(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
     }
 

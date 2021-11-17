@@ -3,7 +3,7 @@ package com.github.durakin.isdlabs.lab4.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class ServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class DispatcherConfiguration extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[]{RootConfiguration.class};
@@ -11,7 +11,7 @@ public class ServletInitializer extends AbstractAnnotationConfigDispatcherServle
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[]{ServletConfiguration.class};
+        return new Class<?>[]{WebConfiguration.class};
     }
 
     @Override

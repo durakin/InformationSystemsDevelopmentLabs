@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+/*
 @Controller
 public @Data
 class MainController {
@@ -29,7 +30,7 @@ class MainController {
 
     @GetMapping("/")
     public String mainPage(Model model) {
-        model.addAttribute("apparel", apparelService.findAll());
+        model.addAttribute("apparels", apparelService.findAll());
         return "home";
     }
 
@@ -63,7 +64,7 @@ class MainController {
         apparelService.update(id, stationery);
         return "redirect:/";
     }
-    */
+
 
     @GetMapping("/delete")
     public String deletePage() {
@@ -85,5 +86,6 @@ class MainController {
         model.addAttribute("stationery", stationeryService.getByManufacturer(manufacturer));
         return "criteria_result";
     }
-    */
 }
+    */
+

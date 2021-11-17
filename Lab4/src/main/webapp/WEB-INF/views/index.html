@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="ru">
+<head>
+    <title>RKIS Lab4</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<header>
+    <h1>Apparels</h1>
+</header>
+<article>
+    <p th:text="${count} + ' different apparels in shop'">Actions:</p>
+    <ul>
+        <li><a href="/find">Check apparels</a></li>
+        <li><a href="/delete">Delete apparel</a></li>
+        <li><a href="/update">Edit apparel</a></li>
+        <li><a href="/add">Add apparel</a></li>
+    </ul>
+</article>
+<footer>
+    <hr>
+    <a href="/">Home</a>
+</footer>
+</body>
+</html>
