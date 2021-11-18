@@ -21,6 +21,17 @@ public class ApparelServiceImpl implements ApparelService {
     }
 
     @Override
+    public Integer add(String apparelType, Double price, Integer inStock, String size, String sex) {
+        var apparel = new Apparel();
+        apparel.setApparelType(apparelType);
+        apparel.setPrice(price);
+        apparel.setInStock(inStock);
+        apparel.setSize(size.trim().equals("") ? null : size.trim());
+        apparel.setSex(sex.trim().equals("") ? null : sex);
+        return this.add(apparel);
+    }
+
+    @Override
     public boolean delete(Integer id) {
         if (!checkId(id)) {
             return false;
