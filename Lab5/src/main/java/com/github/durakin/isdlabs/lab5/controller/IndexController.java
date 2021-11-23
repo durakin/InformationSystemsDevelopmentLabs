@@ -5,11 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/")
 public class IndexController {
     private final ApplicationContext context;
     private final ApparelServiceImpl apparelService;
@@ -20,9 +19,15 @@ public class IndexController {
         this.apparelService = context.getBean("apparelServiceImpl", ApparelServiceImpl.class);
     }
 
-    @GetMapping
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showHomePage(Model model) {
         model.addAttribute("count", (long) apparelService.findAll().size());
         return "index";
     }
+
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String privateHome() {
+        return "private_page";
+    }
 }
+

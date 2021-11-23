@@ -1,6 +1,7 @@
 package com.github.durakin.isdlabs.lab5.configuration;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -53,4 +54,3 @@ public class WebConfiguration implements WebMvcConfigurer {
         registry.viewResolver(resolver);
     }
 }
-
