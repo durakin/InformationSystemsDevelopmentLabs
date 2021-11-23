@@ -3,8 +3,10 @@ package com.github.durakin.isdlabs.lab5.controller;
 import com.github.durakin.isdlabs.lab5.entity.Apparel;
 import com.github.durakin.isdlabs.lab5.form.IdForm;
 import com.github.durakin.isdlabs.lab5.form.MaxPriceForm;
+import com.github.durakin.isdlabs.lab5.service.ApparelService;
 import com.github.durakin.isdlabs.lab5.service.impl.ApparelServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,13 +21,11 @@ import java.util.List;
 @Controller
 @RequestMapping("/find")
 public class FindController {
-    private final ApplicationContext context;
-    private final ApparelServiceImpl apparelService;
+    private final ApparelService apparelService;
 
     @Autowired
-    public FindController(ApplicationContext applicationContext) {
-        this.context = applicationContext;
-        this.apparelService = context.getBean("apparelServiceImpl", ApparelServiceImpl.class);
+    public FindController(@Qualifier("apparelServiceImpl")ApparelService apparelService) {
+        this.apparelService = apparelService;
     }
 
     @GetMapping

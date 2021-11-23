@@ -1,5 +1,7 @@
 <!DOCTYPE HTML>
-<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
 <head>
     <title>Index | RKIS_Lab5</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,13 +11,41 @@
     <h1>Apparels</h1>
 </header>
 <article>
-    <p th:text="${count} + ' different apparels in shop'">Number: </p>
-    <ul>
-        <li><a  th:href="@{~/Lab5_war/find}">Check apparels</a></li>
-        <li><a  th:href="@{~/Lab5_war/delete}">Delete apparel</a></li>
-        <li><a  th:href="@{~/Lab5_war/edit}">Edit apparel</a></li>
-        <li><a  th:href="@{~/Lab5_war/add}">Add apparel</a></li>
-    </ul>
+    <section>
+
+        <ul>
+            <li>
+                <div sec:authorize="isAuthenticated()">
+                    <form method="post" th:action="@{~/Lab5_war/logout}">
+                        <button type="submit">Log out</button>
+                    </form>
+                </div>
+            </li>
+            <li>
+                <div sec:authorize="isAnonymous()">
+                    <a th:href="@{~/Lab5_war/registration}">Sign up</a>
+                </div>
+            </li>
+            <li>
+                <div sec:authorize="isAnonymous()">
+                    <a th:href="@{~/Lab5_war/login}">Sign in</a>
+                </div>
+            </li>
+        </ul>
+        <div sec:authorize="isAuthenticated()">
+            <p>Welcome, [[${#httpServletRequest.remoteUser}]]!</p>
+        </div>
+    </section>
+
+    <section>
+        <p th:text="${count} + ' different apparels in shop'">Number: </p>
+        <ul>
+            <li><a th:href="@{~/Lab5_war/find}">Check apparels</a></li>
+            <li><a th:href="@{~/Lab5_war/delete}">Delete apparel</a></li>
+            <li><a th:href="@{~/Lab5_war/edit}">Edit apparel</a></li>
+            <li><a th:href="@{~/Lab5_war/add}">Add apparel</a></li>
+        </ul>
+    </section>
 </article>
 <footer>
     <hr>

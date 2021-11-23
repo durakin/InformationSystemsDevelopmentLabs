@@ -3,6 +3,7 @@ package com.github.durakin.isdlabs.lab5.controller;
 import com.github.durakin.isdlabs.lab5.entity.User;
 import com.github.durakin.isdlabs.lab5.form.UserForm;
 import com.github.durakin.isdlabs.lab5.repository.UserRepository;
+import com.github.durakin.isdlabs.lab5.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,11 +21,11 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/registration")
 public class RegistrationController {
-    public final PasswordEncoder passwordEncoder;
-    private final UserRepository repository;
+    private final PasswordEncoder passwordEncoder;
+    private final UserService userService;
 
-    public RegistrationController(@Qualifier("userRepository") UserRepository repository, @Qualifier("passwordEncoder") PasswordEncoder passwordEncoder) {
-        this.repository = repository;
+    public RegistrationController(@Qualifier("userServiceImpl") UserService userService, @Qualifier("passwordEncoder") PasswordEncoder passwordEncoder) {
+        this.userService = userService;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -38,7 +39,7 @@ public class RegistrationController {
     public String saveUserToDb(@Valid UserForm userForm, BindingResult bindingResult, Model model) {
         try {
             User newUser = new User(userForm.getUsername(), passwordEncoder.encode(userForm.getPassword()));
-            repository.save(newUser);
+            userService.SaveUser(newUser);
             System.out.println("New user created");
         } catch (Exception e) {
             System.out.println(e.getMessage());
