@@ -39,10 +39,14 @@ public class RegistrationController {
     public String saveUserToDb(@Valid UserForm userForm, BindingResult bindingResult, Model model) {
         try {
             User newUser = new User(userForm.getUsername(), passwordEncoder.encode(userForm.getPassword()));
+            if (userService.FindByName(newUser.getName()) != null) {
+                return "redirect:/register_error";
+            }
             userService.SaveUser(newUser);
             System.out.println("New user created");
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            return "redirect:/register_error";
         }
         return "redirect:/";
     }

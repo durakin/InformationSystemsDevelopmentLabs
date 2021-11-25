@@ -51,7 +51,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/registration").permitAll()
                 .antMatchers("/find").hasAuthority("USER")
                 .antMatchers("/add", "/edit", "/delete", "/admin").hasAuthority("ADMIN")
-                .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().accessDeniedPage("/error")
                 .and()
