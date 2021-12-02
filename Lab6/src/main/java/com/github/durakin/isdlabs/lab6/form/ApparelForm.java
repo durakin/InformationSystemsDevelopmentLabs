@@ -1,6 +1,7 @@
 package com.github.durakin.isdlabs.lab6.form;
 
 import javax.validation.constraints.*;
+import java.math.BigDecimal;
 
 public class ApparelForm {
     /*
@@ -20,7 +21,7 @@ public class ApparelForm {
 
     @NotNull(message = "Can't be null")
     @Positive(message = "Must be positive")
-    private double price;
+    private BigDecimal price;
 
     @NotNull(message = "Can't be null")
     @PositiveOrZero(message = "Can't be negative")
@@ -64,11 +65,11 @@ public class ApparelForm {
         this.sex = sex;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -21,7 +22,7 @@ public class ApparelServiceImpl implements ApparelService {
     }
 
     @Override
-    public Integer add(String apparelType, Double price, Integer inStock, String size, String sex) {
+    public Integer add(String apparelType, BigDecimal price, Integer inStock, String size, String sex) {
         var apparel = new Apparel();
         apparel.setApparelType(apparelType);
         apparel.setPrice(price);
@@ -41,7 +42,7 @@ public class ApparelServiceImpl implements ApparelService {
     }
 
     @Override
-    public boolean update(Integer id, Integer newInStock, Double newPrice) {
+    public boolean update(Integer id, Integer newInStock, BigDecimal newPrice) {
         var oldApparel = this.findById(id);
         if (oldApparel == null) return false;
         if (newPrice != null) {

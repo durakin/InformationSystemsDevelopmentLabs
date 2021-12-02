@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.servlet.http.HttpServletResponse;
+
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 @Controller
@@ -49,11 +51,11 @@ public class ApparelController {
         apparelService.delete(id);
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Apparel> create(@RequestBody final Apparel newApparel) {
-        Apparel apparel = apparelService.findById(apparelService.add(newApparel));
-        return new ResponseEntity<>(apparel, HttpStatus.CREATED);
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.CREATED)
+    public Apparel create(@RequestBody final Apparel newApparel, HttpServletResponse response) {
+        var createdId = apparelService.add(newApparel);
+        response.setHeader("Location", "/apparels/" + createdId);
+        return apparelService.findById(createdId);
     }
 }
-
-

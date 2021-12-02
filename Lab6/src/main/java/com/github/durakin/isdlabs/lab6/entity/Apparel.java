@@ -2,6 +2,7 @@ package com.github.durakin.isdlabs.lab6.entity;
 
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 public class Apparel {
@@ -11,7 +12,7 @@ public class Apparel {
     private Integer id;
 
     @Column(nullable = false)
-    private Double price;
+    private BigDecimal price;
 
     @Column(name = "\"inStock\"", nullable = false)
     private Integer inStock;
@@ -28,7 +29,7 @@ public class Apparel {
     public Apparel() {
     }
 
-    public Apparel(Integer id, Double price, Integer inStock, String apparelType, String size, String sex) {
+    public Apparel(Integer id, BigDecimal price, Integer inStock, String apparelType, String size, String sex) {
         this.id = id;
         this.price = price;
         this.inStock = inStock;
@@ -45,11 +46,11 @@ public class Apparel {
         this.id = id;
     }
 
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

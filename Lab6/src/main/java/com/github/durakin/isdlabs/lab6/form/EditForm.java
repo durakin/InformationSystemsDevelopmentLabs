@@ -3,6 +3,7 @@ package com.github.durakin.isdlabs.lab6.form;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
+import java.math.BigDecimal;
 
 public class EditForm {
     @NotNull(message = "Can't be null")
@@ -11,7 +12,7 @@ public class EditForm {
 
     @NotNull(message = "Can't be null")
     @Positive(message = "Must be positive")
-    private double price;
+    private BigDecimal price;
 
     @NotNull(message = "Can't be null")
     @PositiveOrZero(message = "Can't be negative")
@@ -25,11 +26,11 @@ public class EditForm {
         this.id = id;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

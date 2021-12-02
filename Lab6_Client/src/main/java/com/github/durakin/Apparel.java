@@ -4,10 +4,12 @@ package com.github.durakin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.HttpMessageConverter;
 
+import java.math.BigDecimal;
+
 public class Apparel {
     private Integer id;
 
-    private Double price;
+    private BigDecimal price;
 
     private Integer inStock;
 
@@ -20,7 +22,7 @@ public class Apparel {
     public Apparel() {
     }
 
-    public Apparel(Integer id, Double price, Integer inStock, String apparelType, String size, String sex) {
+    public Apparel(Integer id, BigDecimal price, Integer inStock, String apparelType, String size, String sex) {
         this.id = id;
         this.price = price;
         this.inStock = inStock;
@@ -37,11 +39,11 @@ public class Apparel {
         this.id = id;
     }
 
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
