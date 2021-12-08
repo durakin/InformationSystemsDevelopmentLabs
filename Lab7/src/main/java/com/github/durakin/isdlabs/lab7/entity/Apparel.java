@@ -1,22 +1,29 @@
-package com.github.durakin;
+package com.github.durakin.isdlabs.lab7.entity;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.HttpMessageConverter;
-
+import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Entity
 public class Apparel {
+    @Id
+    @GeneratedValue(strategy =
+            GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(nullable = false)
     private BigDecimal price;
 
+    @Column(name = "\"inStock\"", nullable = false)
     private Integer inStock;
 
+    @Column(name = "\"apparelType\"", nullable = false)
     private String apparelType;
 
+    @Column
     private String size;
 
+    @Column
     private String sex;
 
     public Apparel() {
@@ -81,14 +88,12 @@ public class Apparel {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Apparel {");
-        sb.append("id=").append(id);
-        sb.append(", price=").append(price);
-        sb.append(", inStock=").append(inStock);
-        sb.append(", apparelType='").append(apparelType).append('\'');
-        sb.append(", size='").append(size).append('\'');
-        sb.append(", sex='").append(sex).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "id " + id +
+                "\nType " + apparelType +
+                "\nSex " + sex +
+                "\nSize " + size +
+                "\nPrice " + String.format("%.2f", price) +
+                "\nLeft in stock " + inStock +
+                '\n';
     }
 }
