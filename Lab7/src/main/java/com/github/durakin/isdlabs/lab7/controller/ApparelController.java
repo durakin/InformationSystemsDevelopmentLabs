@@ -40,7 +40,7 @@ public class ApparelController {
         var edited = apparelService.findById(id);
         if (edited != null) {
             rabbitTemplate.convertAndSend("apparel-queue",
-                    new Message("EDIT", java.time.LocalDateTime.now(), edited));
+                    new Message("EDIT", java.time.LocalDateTime.now().toString(), edited));
         }
     }
 
@@ -66,7 +66,7 @@ public class ApparelController {
         var deleted = apparelService.delete(id);
         if (deleted != null) {
             rabbitTemplate.convertAndSend("apparel-queue",
-                    new Message("DELETE", java.time.LocalDateTime.now(), deleted));
+                    new Message("DELETE", java.time.LocalDateTime.now().toString(), deleted));
         }
     }
 
@@ -78,7 +78,7 @@ public class ApparelController {
         var created = apparelService.findById(createdId);
         if (created != null) {
             rabbitTemplate.convertAndSend("apparel-queue",
-                    new Message("ADD", java.time.LocalDateTime.now(), created));
+                    new Message("ADD", java.time.LocalDateTime.now().toString(), created));
         }
         return created;
     }

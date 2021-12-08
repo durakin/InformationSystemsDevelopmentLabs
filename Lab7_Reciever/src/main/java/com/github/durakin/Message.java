@@ -1,7 +1,6 @@
-package com.github.durakin.isdlabs.lab7.entity;
+package com.github.durakin;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 public class Message implements Serializable {
     private String action;
