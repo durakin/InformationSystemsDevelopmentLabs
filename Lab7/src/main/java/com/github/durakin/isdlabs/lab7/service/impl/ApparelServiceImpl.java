@@ -33,12 +33,13 @@ public class ApparelServiceImpl implements ApparelService {
     }
 
     @Override
-    public boolean delete(Integer id) {
+    public Apparel delete(Integer id) {
         if (!checkId(id)) {
-            return false;
+            return null;
         }
+        var deleted = this.apparelRepository.findById(id);
         this.apparelRepository.deleteById(id);
-        return true;
+        return deleted.orElse(null);
     }
 
     @Override

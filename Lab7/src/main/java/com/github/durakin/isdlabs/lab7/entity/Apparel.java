@@ -2,10 +2,11 @@ package com.github.durakin.isdlabs.lab7.entity;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
-public class Apparel {
+public class Apparel implements Serializable {
     @Id
     @GeneratedValue(strategy =
             GenerationType.IDENTITY)
