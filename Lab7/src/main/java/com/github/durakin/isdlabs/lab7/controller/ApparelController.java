@@ -1,8 +1,8 @@
 package com.github.durakin.isdlabs.lab7.controller;
 
-import com.github.durakin.isdlabs.lab7.entity.ApaprelUpdate;
+import com.github.durakin.isdlabs.lab7.model.ApaprelUpdate;
 import com.github.durakin.isdlabs.lab7.entity.Apparel;
-import com.github.durakin.isdlabs.lab7.entity.Message;
+import com.github.durakin.isdlabs.lab7.model.Message;
 import com.github.durakin.isdlabs.lab7.service.ApparelService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

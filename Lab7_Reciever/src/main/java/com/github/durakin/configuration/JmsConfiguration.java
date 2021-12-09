@@ -1,4 +1,4 @@
-package com.github.durakin;
+package com.github.durakin.configuration;
 
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.annotation.RabbitListenerConfigurer;

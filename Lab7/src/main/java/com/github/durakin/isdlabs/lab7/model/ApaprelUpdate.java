@@ -1,4 +1,4 @@
-package com.github.durakin.isdlabs.lab7.entity;
+package com.github.durakin.isdlabs.lab7.model;
 
 import java.math.BigDecimal;
 

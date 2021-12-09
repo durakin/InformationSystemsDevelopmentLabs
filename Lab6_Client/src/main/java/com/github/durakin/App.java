@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.net.URI;
 
 public class App {
-    private static final String url = "http://localhost:8080/Lab6_war/apparels";
+    private static final String url = "http://localhost:8080/Lab7_war/apparels";
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     public static void main(String[] args) throws JsonProcessingException {
@@ -22,13 +22,13 @@ public class App {
         var apparel = new Apparel();
         apparel.setPrice(BigDecimal.valueOf(120.91));
         apparel.setInStock(120);
-        apparel.setApparelType("Added via REST API");
+        apparel.setApparelType("Added via REST API during lab7 tests");
 
-        updateApparel(13, 60, BigDecimal.valueOf(50000));
+        System.out.println(create(apparel));
 
-        //System.out.println(create(apparel));
+        deleteApparel(37);
 
-        //deleteApparel(20);
+        updateApparel(38, 60, BigDecimal.valueOf(50));
     }
 
     public static Apparel retrieveApparel(int id) {

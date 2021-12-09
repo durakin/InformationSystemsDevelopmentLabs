@@ -1,4 +1,4 @@
-package com.github.durakin;
+package com.github.durakin.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

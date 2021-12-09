@@ -1,4 +1,4 @@
-package com.github.durakin;
+package com.github.durakin.model;
 
 
 import java.io.Serializable;

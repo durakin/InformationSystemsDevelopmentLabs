@@ -1,5 +1,6 @@
-package com.github.durakin;
+package com.github.durakin.receiver;
 
+import com.github.durakin.model.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
