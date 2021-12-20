@@ -26,9 +26,9 @@ public class App {
 
         System.out.println(create(apparel));
 
-        deleteApparel(37);
+        deleteApparel(38);
 
-        updateApparel(38, 60, BigDecimal.valueOf(50));
+        updateApparel(39, 60, BigDecimal.valueOf(50));
     }
 
     public static Apparel retrieveApparel(int id) {

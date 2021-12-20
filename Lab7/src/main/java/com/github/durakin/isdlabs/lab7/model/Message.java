@@ -3,7 +3,6 @@ package com.github.durakin.isdlabs.lab7.model;
 import com.github.durakin.isdlabs.lab7.entity.Apparel;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 public class Message implements Serializable {
     private String action;
